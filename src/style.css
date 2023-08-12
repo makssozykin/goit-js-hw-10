@@ -1,27 +1,73 @@
 body {
-  background-color: rgb(114, 101, 101);
+  background-color: #263038;
+  display: flex;
+  gap: 50px;
 }
 
 .is-hidden {
-  display: none;
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
 }
 
 .breed-select {
   display: flex;
-  width: 100px;
+  max-width: 300px;
+  height: 15px;
+  margin-bottom: 50px;
 }
 
 .cat-info {
-  width: 600px;
-  height: 600px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  width: 300px;
+  height: 100%;
+  padding: 5px;
+  background-color: #d9e9f7;
+  border: 1px solid black;
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+    rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+img {
+  display: block;
+  content: '';
+  max-width: 100%;
+  border-radius: 5px;
+  box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px,
+    rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+}
+h2 {
+  margin: 0;
+}
+h3 {
+  margin: 0;
+}
+
+p {
+  margin: 0;
+  text-align: center;
 }
 
 .loader {
+  position: absolute;
   font-size: 10px;
   width: 1em;
   height: 1em;
+  top: 200px;
+  left: 150px;
   border-radius: 50%;
-  position: relative;
   text-indent: -9999em;
   animation: mulShdSpin 1.1s infinite ease;
   transform: translateZ(0);

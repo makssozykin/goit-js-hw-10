@@ -16,6 +16,7 @@ const refs = {
     container: document.querySelector(".cat-info"),
 };
 
+
 function slimSelect() { 
     new SlimSelect({
         select: refs.select,
@@ -27,11 +28,12 @@ refs.container.classList.add('is-hidden');
 refs.error.classList.add('is-hidden');
 refs.loader.textContent = '';
 
+
 fetchBreeds().then(data => {
     refs.select.innerHTML = createList(data);
     slimSelect();
     refs.select.classList.remove('is-hidden');
-    refs.loader.classList.replace('loader','is-hidden');
+    refs.loader.classList.replace('loader', 'is-hidden');
 })
     .catch(fetchError);
 
@@ -62,7 +64,7 @@ function createList(arr) {
 
 function createMarkup(data) {
     const card = data.map(el => {
-        return `<img src="${el.url}" alt="${el.breeds[0].name}" width="400"/><h2>${el.breeds[0].name}</h2><p>${el.breeds[0].description}</p><h3>Temperament</h3><p>${el.breeds[0].temperament}</p>`;
+        return `<img src="${el.url}" alt="${el.breeds[0].name}"/><h2>${el.breeds[0].name}</h2><p>${el.breeds[0].description}</p><h3>Temperament</h3><p>${el.breeds[0].temperament}</p>`;
     })
         .join('');
     refs.container.innerHTML = card;
